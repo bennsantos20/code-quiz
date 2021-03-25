@@ -7,6 +7,7 @@ var answerTwo = document.getElementById("secondButton");
 var answerThree = document.getElementById("thirdButton");
 var answerFour = document.getElementById("fourthButton");
 var timerBox = document.getElementById("timer");
+var title = document.getElementById("title");
 
 var questions = [
   {
@@ -36,8 +37,31 @@ var questions = [
 },
 ];
 
-startButton.addEventListener("click", startGame);
-function startGame() {
-  startPage.classList.add("hidden");
-  questionScreen.classList.remove("hidden");
-}
+title.textContent = questions[0].question;
+answerOne.textContent = questions[0].answers[0];
+answerTwo.textContent = questions[0].answers[1];
+answerThree.textContent = questions[0].answers[2];
+answerFour.textContent = questions[0].answers[3];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+startButton.addEventListener("click", function() {
+    questionScreen.setAttribute("style", "display:initial");
+    startPage.setAttribute("style", "display:none");
+})
+  
