@@ -8,6 +8,7 @@ var answerThree = document.getElementById("thirdButton");
 var answerFour = document.getElementById("fourthButton");
 var timerBox = document.getElementById("timer");
 var title = document.getElementById("title");
+var answerChoices = document.getElementById("choices");
 
 var questions = [
   {
@@ -43,25 +44,51 @@ answerTwo.textContent = questions[0].answers[1];
 answerThree.textContent = questions[0].answers[2];
 answerFour.textContent = questions[0].answers[3];
 
+title.textContent = questions[1].question;
+answerOne.textContent = questions[1].answers[0];
+answerTwo.textContent = questions[1].answers[1];
+answerThree.textContent = questions[1].answers[2];
+answerFour.textContent = questions[1].answers[3];
+
+title.textContent = questions[2].question;
+answerOne.textContent = questions[2].answers[0];
+answerTwo.textContent = questions[2].answers[1];
+answerThree.textContent = questions[2].answers[2];
+answerFour.textContent = questions[2].answers[3];
+
+title.textContent = questions[3].question;
+answerOne.textContent = questions[3].answers[0];
+answerTwo.textContent = questions[3].answers[1];
+answerThree.textContent = questions[3].answers[2];
+answerFour.textContent = questions[3].answers[3];
+
+title.textContent = questions[4].question;
+answerOne.textContent = questions[4].answers[0];
+answerTwo.textContent = questions[4].answers[1];
+answerThree.textContent = questions[4].answers[2];
+answerFour.textContent = questions[4].answers[3];
 
 
 
 
+answerChoices.addEventListener("click", function(event) {
+        var optionTarget = event.target;
+        var userChoice = event.target.textContent;
 
+        if (optionTarget.target.matches("button")) {
+            if (userChoice === questions[0].correctAnswer)
+            alert("Correct");
+            else if (userChoice !== questions[0].correctAnswer) {
+                alert("Wrong");
+            }
+        })
 
+            
+            
+startButton.addEventListener("click", startGame)
 
+function startGame(){
+    startPage.classList.add('display-none')
+    questionScreen.classList.add('display-none')
+}
 
-
-
-
-
-
-
-
-
-
-startButton.addEventListener("click", function() {
-    questionScreen.setAttribute("style", "display:initial");
-    startPage.setAttribute("style", "display:none");
-})
-  
